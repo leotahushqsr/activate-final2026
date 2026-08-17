@@ -1275,7 +1275,7 @@
               No hidden fees.
             </div>
 
-<form action="/final.html" method="get" autocomplete="off">
+<form id="activation-form" autocomplete="off">
   <label for="code">Enter your activation code:</label>
 
   <div class="input-shell">
@@ -1295,27 +1295,20 @@
     Register my device
   </button>
 
-  <a
-    href="tel:+18773703150"
-    class="btn-orange"
-    aria-label="Call customer service at +1 (877) 370-3150"
-  >
-    <svg
-      class="ico"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
-    </svg>
-
+  <a href="tel:+18773703150" class="btn-orange">
     Call us — we'll do it for you
   </a>
 </form>
+
+<script>
+document.getElementById('activation-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  if (this.checkValidity()) {
+    window.location.href = '/final.html';
+  }
+});
+</script>
 
             <div class="buy-box-divider"></div>
             <div class="meta-row"><span class="key">Activation</span><span class="val">Instant</span></div>
